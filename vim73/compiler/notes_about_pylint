@@ -1,0 +1,2 @@
+Run with :Pylint inside vim
+Added line "redraw!" to end of Pylint() function in pylint.vim to avoid blank screen after run
