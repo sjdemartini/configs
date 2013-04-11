@@ -62,6 +62,14 @@ if has("autocmd") && !exists("has_loaded_autocommands")
     " Make default html file-teype djangohtml to support django syntax highlighting
     autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
+    "Set indentation to 2 spaces for html and php
+    autocmd FileType html set tabstop=2
+    autocmd FileType html set softtabstop=2
+    autocmd FileType html set shiftwidth=2
+    autocmd FileType php set tabstop=2
+    autocmd FileType php set softtabstop=2
+    autocmd FileType php set shiftwidth=2
+
     " Make vim automatically source (i.e., reload) the vimrc each time it is saved
     autocmd! bufwritepost _vimrc source $MYVIMRC
 else
@@ -96,7 +104,7 @@ endif
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+              \ | wincmd p | diffthis
 endif
 
 "======================================

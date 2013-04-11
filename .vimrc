@@ -68,6 +68,12 @@ else
 endif
 
 "======================================
+" Appearance
+"======================================
+set background=dark
+colorscheme steven
+
+"======================================
 " Keymappings and commands
 "======================================
 " Set pastetoggle so that when on, pasting preserves indentation from text
@@ -88,7 +94,7 @@ endif
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+          \ | wincmd p | diffthis
 endif
 
 "======================================
