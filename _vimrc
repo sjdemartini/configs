@@ -62,13 +62,16 @@ if has("autocmd") && !exists("has_loaded_autocommands")
     " Make default html file-teype djangohtml to support django syntax highlighting
     autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
-    "Set indentation to 2 spaces for html and php
+    "Set indentation to 2 spaces for html/php/css
     autocmd FileType html set tabstop=2
     autocmd FileType html set softtabstop=2
     autocmd FileType html set shiftwidth=2
     autocmd FileType php set tabstop=2
     autocmd FileType php set softtabstop=2
     autocmd FileType php set shiftwidth=2
+    autocmd FileType css set tabstop=2
+    autocmd FileType css set softtabstop=2
+    autocmd FileType css set shiftwidth=2
 
     " Make vim automatically source (i.e., reload) the vimrc each time it is saved
     autocmd! bufwritepost _vimrc source $MYVIMRC
