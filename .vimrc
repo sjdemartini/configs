@@ -10,6 +10,8 @@ set modeline
 syntax on " enable syntax highlighting
 filetype on " enable filetype detection
 
+set spell spelllang=en_us " enable spellcheck
+
 "Fix problems with the 'delete' key, so that it deletes characters after the
 "cursor instead of before the cursor
 fixdel

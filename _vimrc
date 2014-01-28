@@ -10,6 +10,8 @@ set modeline
 syntax on " enable syntax highlighting
 filetype on " enable filetype detection
 
+set spell spelllang=en_us " enable spellcheck
+
 set number " show line number
 set cc=80 " color columns > 80 characters
 set title " show title in window console
