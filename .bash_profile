@@ -25,6 +25,8 @@ alias gb='git branch'
 alias gch='git checkout'
 alias gpu='git pull'
 alias gprom='git pull --rebase origin master'
+alias gf='git fetch'
+alias gfp='git fetch -p'  # pruning fetch
 alias gcl='git clone'
 # Display files affected by a commit. Usage: gfiles <commit_id>
 alias gfiles='git diff-tree --no-commit-id --name-status -r'
