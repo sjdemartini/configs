@@ -9,11 +9,13 @@
 	[
 		80
 	],
+	"show_full_path": true,
 	"spell_check": true,
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": true
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true
 }
