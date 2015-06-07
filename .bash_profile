@@ -1,4 +1,3 @@
-export PATH=/usr/local/share/python:/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export GREP_OPTIONS='--color=auto'
