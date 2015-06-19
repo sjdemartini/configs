@@ -1,0 +1,34 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoPEP8",
+		"Djaneiro",
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"EasyDiff",
+		"Emmet",
+		"ExtendedTabSwitcher",
+		"Git",
+		"GitGutter",
+		"HTML Mustache",
+		"Jedi - Python autocompletion",
+		"Package Control",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-flake8",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"SublimeLinter-pep257",
+		"SublimeLinter-pep8",
+		"SublimeLinter-pyflakes",
+		"SublimeLinter-pylint",
+		"Syntax Highlighting for Sass",
+		"Wrap Plus"
+	]
+}
