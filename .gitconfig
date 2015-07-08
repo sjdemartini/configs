@@ -1,0 +1,32 @@
+  [alias]
+    s = status
+    d = diff
+    dc = diff --cached
+    ds = diff --staged
+    a = add
+    co = checkout
+    b = branch
+    ba = branch -a
+    l = log
+    f = fetch
+    fp = fetch -p  # prune
+    r = reset
+    p = pull
+    pr = pull --rebase
+    prom = pull --rebase origin master
+    ps = push
+    pom = push origin master
+    cp = cherry-pick
+    sh = show
+    up = !git fetch origin && git rebase origin/master
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    files = diff-tree --no-commit-id --name-status -r  # displays files affected by a commit (git files <commit_hash>)
+  [color]
+    ui = auto
+  [core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+  [push]
+    default = current
+  [rerere]
+    enabled = 1
