@@ -7,7 +7,10 @@
     co = checkout
     b = branch
     ba = branch -a
+    bclean = !git branch --merged master | grep -v 'master$' | xargs git branch -d
     l = log
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lp = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     f = fetch
     fp = fetch -p  # prune
     r = reset
@@ -19,7 +22,6 @@
     cp = cherry-pick
     sh = show
     up = !git fetch origin && git rebase origin/master
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     files = diff-tree --no-commit-id --name-status -r  # displays files affected by a commit (git files <commit_hash>)
   [color]
     ui = auto
