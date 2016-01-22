@@ -1,4 +1,5 @@
   [alias]
+    c = commit
     s = status
     d = diff
     dc = diff --cached
