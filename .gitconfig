@@ -4,6 +4,7 @@
     d = diff
     dc = diff --cached
     ds = diff --staged
+    dm = diff origin/master...HEAD
     a = add
     co = checkout
     b = branch
