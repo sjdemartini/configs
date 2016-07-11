@@ -1,13 +1,14 @@
 {
 	"default_line_ending": "unix",
 	"detect_indentation": true,
+	"ensure_newline_at_eof_on_save": true,
 	"font_size": 10,
 	"ignored_packages":
 	[
 	],
 	"rulers":
 	[
-		80
+		100
 	],
 	"show_full_path": true,
 	"spell_check": true,
