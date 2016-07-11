@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[require 'pry'; binding.remote_pry  # use `pry-remote` in shell in airbnb repo inside vagrant]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>pryr</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.ruby</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>Pry Debug Remote</description>
+</snippet>
