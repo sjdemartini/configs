@@ -1,0 +1,55 @@
+[
+    { "keys": ["ctrl+pagedown"], "command": "next_view" },
+    { "keys": ["ctrl+pageup"], "command": "prev_view" },
+    { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["f8"], "command": "toggle_overwrite" },
+    { "keys": ["g", "q"], "command": "wrap_lines_plus",
+            "context":
+            [
+                { "key": "setting.command_mode", "operand": true },
+                { "key": "setting.is_widget", "operand": false }
+            ]
+    },
+    { "keys": ["j", "j"], "command": "exit_insert_mode",
+            "context":
+            [
+                { "key": "setting.command_mode", "operand": false },
+                { "key": "setting.is_widget", "operand": false }
+            ]
+    },
+
+    // Go to left bracket
+    {
+        "keys": ["ctrl+alt+shift+up"],
+        "command": "bh_key",
+        "args":
+        {
+            "no_outside_adj": null,
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect",
+                "args": {"select": "left"}
+            }
+        }
+    },
+
+    // Go to right bracket
+    {
+        "keys": ["ctrl+alt+shift+down"],
+        "command": "bh_key",
+        "args":
+        {
+            "no_outside_adj": null,
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect",
+                "args": {"select": "right"}
+            }
+        }
+    }
+]
