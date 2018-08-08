@@ -120,8 +120,9 @@ function set_bash_prompt () {
   fi
 
   # Set the bash prompt variable.
+  # \D{%F %T} is the current date and time
   PS1="
-${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE} ${BRANCH}
+${PYTHON_VIRTUALENV}${GREEN}\u@\h ${BLUE}\D{%F %T} ${YELLOW}\w${COLOR_NONE} ${BRANCH}
 ${PROMPT_SYMBOL} "
 }
 
