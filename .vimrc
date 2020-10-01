@@ -84,7 +84,7 @@ endif
 " Appearance
 "======================================
 set background=dark
-colorscheme steven
+colorscheme monokai
 
 "======================================
 " Keymappings and commands
