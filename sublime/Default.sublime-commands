@@ -3,4 +3,7 @@
     "caption": "File: Copy Path Relative From Project",
     "command": "side_bar_copy_path_relative_from_project"
   },
+  { "caption": "Reveal in Sidebar",
+    "command": "reveal_in_side_bar",
+  },
 ]
