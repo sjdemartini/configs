@@ -31,12 +31,17 @@
     # Display files affected by a commit (git files <commit_hash>)
     files = diff-tree --no-commit-id --name-status -r
     # Update master branch, prune remote branches, and clean out merged local branches
+    mm = !git checkout -q master && git fp && git merge origin/master && git bclean
+    # Update master branch, prune remote branches, and clean out merged local branches
     mclean = !git checkout master && git fp && git merge origin/master && git bclean && git checkout -
   [color]
     ui = auto
   [core]
     editor = vim
     excludesfile = ~/.gitignore_global
+  [pager]
+    branch = false
+    log = false
   [push]
     default = current
   [rerere]
