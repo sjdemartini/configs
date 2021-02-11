@@ -38,4 +38,8 @@
         "key": "cmd+alt+1",
         "command": "workbench.action.joinAllGroups"
     },
+    {
+        "key": "alt+cmd+5",
+        "command": "editor.emmet.action.matchTag"
+    },
 ]
