@@ -4,7 +4,10 @@
     d = diff
     dc = diff --cached
     ds = diff --staged
+    # View all changes in the working tree since this branched off of master
     dm = diff origin/master...HEAD
+    # Compare with the remote branch upstream
+    du = diff @{upstream}
     a = add
     co = checkout
     b = branch
