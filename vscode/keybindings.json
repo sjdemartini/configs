@@ -42,4 +42,12 @@
         "key": "alt+cmd+5",
         "command": "editor.emmet.action.matchTag"
     },
+    {
+        "key": "ctrl+cmd+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
 ]
