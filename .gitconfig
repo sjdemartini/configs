@@ -39,8 +39,10 @@
     files = diff-tree --no-commit-id --name-status -r
     # Update master branch, prune remote branches, and clean out merged local branches
     mm = !git checkout -q master && git fp && git merge origin/master && git bclean
-    # Update master branch, prune remote branches, and clean out merged local branches
-    mclean = !git checkout master && git fp && git merge origin/master && git bclean && git checkout -
+    # Update master branch, prune remote branches, clean out merged local branches, and switch back
+    mclean = !git checkout -q master && git fp && git merge origin/master && git bclean && git checkout -q -
+    # Update master branch, prune remote branches, clean out merged local branches, switch back, and rebase
+    cr = !git checkout -q master && git fp && git merge origin/master && git bclean && git checkout -q - && git rebase origin/master
   [color]
     ui = auto
   [core]
