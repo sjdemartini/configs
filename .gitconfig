@@ -12,6 +12,10 @@
     co = checkout
     b = branch
     ba = branch -a
+    # Show local branches with their latest commit and date, ordered from least recently updated to
+    # most recently updated (taken from
+    # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit/5188364#comment46325412_5188364)
+    br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
     bclean = !git branch --merged master | grep -v 'master$' | xargs git branch -d
     l = log
     # Pretty abbreviated git log graph
