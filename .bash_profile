@@ -43,5 +43,9 @@ source `which virtualenvwrapper.sh`
 # Use vi key bindings in the shell
 set -o vi
 
+# And on GUI-less Linux machines:
+# export EDITOR='vi'
+# export VISUAL='vi'
+
 # Git branch in prompt.
 source ~/.bash_prompt
