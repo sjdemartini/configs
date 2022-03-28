@@ -37,7 +37,7 @@
     up = !git fetch origin && git rebase origin/master
     # Interactiver rebase from the merge-base
     # (don't replay on latest master https://stackoverflow.com/a/4207357/4543977)
-    rb = !git rebase -i `git merge-base HEAD master`
+    rb = !git rebase -i `git merge-base HEAD origin/master`
     # Display files affected by a commit (git files <commit_hash>)
     files = diff-tree --no-commit-id --name-status -r
     # Update master branch, prune remote branches, and clean out merged local branches
