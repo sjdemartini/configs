@@ -6,10 +6,12 @@
     ds = diff --staged
     # View all changes in the working tree since this branched off of master
     dm = diff origin/master...HEAD
+    dmn = diff origin/main...HEAD
     # Compare with the remote branch upstream
     du = diff @{upstream}
     a = add
     co = checkout
+    sw = switch
     b = branch
     ba = branch -a
     # Show local branches with their latest commit and date, ordered from least recently updated to
@@ -17,6 +19,8 @@
     # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit/5188364#comment46325412_5188364)
     br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
     bclean = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+    bcleanmain = !git branch --merged main | grep -v 'main$' | xargs git branch -d
+    bd = delete-merged-branches # From https://github.com/hartwork/git-delete-merged-branches
     l = log
     # Pretty abbreviated git log graph
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -24,6 +28,7 @@
     lp = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     # See which commits are not merged since branching from master
     lpm = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/master..HEAD
+    lpmain = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/main..HEAD
     f = fetch
     fp = fetch -p  # prune
     r = reset
@@ -35,22 +40,35 @@
     cp = cherry-pick
     sh = show
     up = !git fetch origin && git rebase origin/master
-    # Interactiver rebase from the merge-base
+    # Interactive rebase from the merge-base
     # (don't replay on latest master https://stackoverflow.com/a/4207357/4543977)
     rb = !git rebase -i `git merge-base HEAD origin/master`
+    rbm = !git rebase -i `git merge-base HEAD origin/main`
+    # Interactive rebase with autosquash, from the merge-base (don't replay on latest
+    # master)
+    rba = !git rebase -i --autosquash `git merge-base HEAD origin/master`
+    rbam = !git rebase -i --autosquash `git merge-base HEAD origin/main`
+    # git absorb (https://github.com/tummychow/git-absorb) and automatic rebase
+    arb = absorb --and-rebase
     # Display files affected by a commit (git files <commit_hash>)
     files = diff-tree --no-commit-id --name-status -r
     # Update master branch, prune remote branches, and clean out merged local branches
     mm = !git checkout -q master && git fp && git merge origin/master && git bclean
     # Update master branch, prune remote branches, clean out merged local branches, and switch back
     mclean = !git checkout -q master && git fp && git merge origin/master && git bclean && git checkout -q -
+    mainclean = !git checkout -q main && git fp && git merge origin/main && git delete-merged-branches --yes && git checkout -q -
     # Update master branch, prune remote branches, clean out merged local branches, switch back, and rebase
     cr = !git checkout -q master && git fp && git merge origin/master && git bclean && git checkout -q - && git rebase origin/master
+    crm = !git mainclean && git rebase origin/main
   [color]
     ui = auto
+  [user]
+    name = Steven DeMartini
+    email = sjdemartini@users.noreply.github.com
   [core]
     editor = vim
     excludesfile = ~/.gitignore_global
+    pager = less -X -F
   [pager]
     branch = false
     log = false
@@ -58,3 +76,8 @@
     default = current
   [rerere]
     enabled = 1
+  [init]
+    defaultBranch = main
+  [diff]
+    # Show "moved" content differently in `git diff`
+    colormoved = dimmed-zebra
