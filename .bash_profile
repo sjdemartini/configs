@@ -47,5 +47,13 @@ set -o vi
 # export EDITOR='vi'
 # export VISUAL='vi'
 
+# Update history-related settings (https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps)
+HISTSIZE=5000
+HISTFILESIZE=10000
+# Append instead of overwriting the history for a session
+shopt -s histappend
+# Write to history immediately instead of on exit (https://askubuntu.com/a/67306/1360127):
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 # Git branch in prompt.
 source ~/.bash_prompt
