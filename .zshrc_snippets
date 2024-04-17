@@ -1,0 +1,35 @@
+# Use https://ohmyz.sh/
+# Use Powerlevel10k: https://github.com/romkatv/powerlevel10k
+
+# For conda completions: https://github.com/conda-incubator/conda-zsh-completion/blob/db9245508ef4b7f2e5105cb8c42cb33965760327/_conda#L24-L35
+plugins=(git poetry conda-zsh-completion)
+
+# ...
+
+# Vim key bindings
+set -o vi
+
+# Start a fresh shell session
+alias s='exec zsh'
+
+# Save longer history with zsh https://martinheinz.dev/blog/110
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+# Ensure there's separate command history per terminal tab
+unsetopt SHARE_HISTORY
+
+# And other options from https://martinheinz.dev/blog/110
+# https://zsh.sourceforge.io/Doc/Release/Options.html (16.2.4 History)
+setopt EXTENDED_HISTORY      # Write the history file in the ':start:elapsed;command' format.
+# setopt INC_APPEND_HISTORY    # Write to the history file immediately, not when the shell exits. -- Using INC_APPEND_HISTORY_TIME instead
+setopt INC_APPEND_HISTORY_TIME # Write to the history file immediately *after* the command so that it can record the time (https://unix.stackexchange.com/a/670027/456000), not when the shell exits.
+# setopt SHARE_HISTORY         # Share history between all sessions.  -- Don't do this so that we can have separate tab sessions. See above
+setopt HIST_IGNORE_DUPS      # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS  # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space. For secrets, etc.
+setopt HIST_SAVE_NO_DUPS     # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY           # Do not execute immediately upon user entering a line in history expansion; load into editing buffer.
+setopt APPEND_HISTORY        # append to history file, rather than overwriting it (Default)
+# setopt HIST_NO_STORE         # Don't store history commands
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
