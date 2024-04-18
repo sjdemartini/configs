@@ -16,7 +16,10 @@ alias s='exec zsh'
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-# Ensure there's separate command history per terminal tab
+# Ensure there's separate command history per terminal tab.
+# NOTE: Since not sharing history, I want to bring in all history from other tabs
+# into the given tab's session, I can use the command: `fc -RI`
+# (https://unix.stackexchange.com/a/670027/456000)
 unsetopt SHARE_HISTORY
 
 # And other options from https://martinheinz.dev/blog/110
