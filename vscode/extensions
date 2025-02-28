@@ -1,12 +1,15 @@
 batisteo.vscode-django
 benspaulding.procfile
+bierner.markdown-emoji
 bungcip.better-toml
 CoenraadS.bracket-pair-colorizer
+DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 GraphQL.vscode-graphql
+mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
@@ -23,3 +26,4 @@ VisualStudioExptTeam.vscodeintellicode
 vscodeshift.material-ui-snippets
 vscodevim.vim
 wmaurer.change-case
+yzhang.markdown-all-in-one
