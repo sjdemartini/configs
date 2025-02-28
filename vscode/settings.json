@@ -1,5 +1,7 @@
 {
     "cSpell.diagnosticLevel": "Hint",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
     "editor.minimap.enabled": false,
     "editor.minimap.maxColumn": 100,
     "editor.quickSuggestions": {
@@ -10,11 +12,14 @@
     "editor.rulers": [
         100
     ],
+    "editor.stickyScroll.enabled": true,
     "editor.suggestSelection": "first",
     "editor.wordWrapColumn": 100,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.enabled": false,
     "gitlens.codeLens.scopes": [
@@ -57,13 +62,19 @@
             "stash": true
         }
     },
+    "notebook.multiCursor.enabled": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.typeCheckingMode": "basic",
     "python.languageServer": "Pylance",
     "python.showStartPage": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "vim.textwidth": 100,
+    "vim.joinspaces": false,  // Don't add two spaces after periods, etc when wrapping content
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.confirmBeforeClose": "keyboardOnly",
     "workbench.editor.decorations.badges": true,
     "workbench.editor.decorations.colors": true,
-    "workbench.editor.showTabs": true
+    "workbench.editor.showTabs": true,
+    "workbench.tree.enableStickyScroll": true
 }
