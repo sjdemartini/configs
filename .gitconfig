@@ -18,9 +18,12 @@
     # most recently updated (taken from
     # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit/5188364#comment46325412_5188364)
     br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+    # Do the same as `br`, but only the 15 most recent branches, and keep coloration
+    brb = !git br --color=always | tail -n 15
     bclean = !git branch --merged master | grep -v 'master$' | xargs git branch -d
     bcleanmain = !git branch --merged main | grep -v 'main$' | xargs git branch -d
     bd = delete-merged-branches # From https://github.com/hartwork/git-delete-merged-branches
+    bdy = delete-merged-branches --yes # From https://github.com/hartwork/git-delete-merged-branches
     l = log
     # Pretty abbreviated git log graph
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
