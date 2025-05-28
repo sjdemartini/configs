@@ -84,7 +84,7 @@ endif
 " Appearance
 "======================================
 set background=dark
-colorscheme monokai # Use https://github.com/crusoexia/vim-monokai
+colorscheme monokai " Use https://github.com/ku1ik/vim-monokai
 
 "======================================
 " Keymappings and commands
